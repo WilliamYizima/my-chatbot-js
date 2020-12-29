@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .blip-chat-open-iframe {
+        line-height: 1.4;
+        font-size: 100%;
+        font-weight: 300;
+        word-break: break-word;
+        word-wrap: break-word;
+        font-family: "Neo Sans", sans-serif;
+        --first-color: #000000;
+        --second-color: #ffffff;
+        --third-color: #8f9299;
+        --animation-duration: 0.3s;
+        color: #111;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+        transition: var(--animation-duration) !important;
+        background-color: #ffffff !important;
+        bottom: 60px !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+        position: fixed;
+        width: 4%;
+        max-width: 60px;
+        min-width: 48px;
+        max-height: 60px;
+        min-height: 48px;
+        right: 35px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1), 0 2px 32px rgba(0, 0, 0, 0.1);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 47.9894px;
+    }
+</style>
+
+<body>
+
+    <div id="blip-chat-open-iframe" style="height: 47.9894px;">
+        <div id="blip-chat-notifications"></div>
+        <div id="blip-chat-icon">
+            <img src="https://malwee.vteximg.com.br/arquivos/bubble-bott-malwee-black.svg"
+                class="top"><img src="https://malwee.vteximg.com.br/arquivos/bubble-top-malwee-white.svg"
+                class="bottom">
+        </div>
+        <svg id="blip-chat-close-icon" viewBox="0 0 40 40" style="display:none;" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Close" fill="#FFFFFF" fill-rule="nonzero">
+                    <g id="close" transform="translate(14.000000, 14.000000)">
+                        <path
+                            d="M7.62601627,5.78918918 L11.8536585,1.54054054 C12.0487805,1.34594595 12.0487805,1.05405406 11.8536585,0.859459461 L11.203252,0.178378378 C11.00813,-0.0162162161 10.7154471,-0.0162162161 10.5203252,0.178378378 L6.26016258,4.42702704 C6.13008127,4.55675677 5.93495933,4.55675677 5.80487802,4.42702704 L1.54471545,0.145945946 C1.34959349,-0.0486486486 1.05691057,-0.0486486486 0.861788617,0.145945946 L0.178861788,0.827027029 C-0.0162601625,1.02162162 -0.0162601625,1.31351352 0.178861788,1.50810811 L4.43902439,5.75675678 C4.56910569,5.88648652 4.56910569,6.08108111 4.43902439,6.21081085 L0.146341463,10.4918919 C-0.0487804876,10.6864865 -0.0487804876,10.9783784 0.146341463,11.172973 L0.829268292,11.8540541 C1.02439024,12.0486486 1.31707317,12.0486486 1.51219512,11.8540541 L5.77235773,7.60540544 C5.90243904,7.4756757 6.09756098,7.4756757 6.22764229,7.60540544 L10.4878049,11.8540541 C10.6829268,12.0486486 10.9756098,12.0486486 11.1707317,11.8540541 L11.8536585,11.172973 C12.0487805,10.9783784 12.0487805,10.6864865 11.8536585,10.4918919 L7.62601627,6.24324324 C7.49593496,6.1135135 7.49593496,5.91891892 7.62601627,5.78918918 Z"
+                            id="path-1"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+</body>
+
+</html>

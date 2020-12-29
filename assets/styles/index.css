@@ -1,0 +1,23 @@
+#iframe-ibot {
+    position: fixed;
+    bottom: 90px;
+    right: 80px;
+    z-index: 1;
+    width: 40%;
+    height: 86%;
+}
+
+.fade-out {
+    animation: fadeOut 2s;
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
