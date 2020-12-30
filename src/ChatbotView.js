@@ -78,6 +78,5 @@ export default class ChatbotView {
 
     update(messages){
         this._element.innerHTML = this.template(messages);
-        console.log('estou no update')
     }
 }

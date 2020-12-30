@@ -2,10 +2,13 @@ import '../assets/styles/icon-open-chat.css';
 import '../assets/styles/bubble-greetings.css';
 import '../assets/styles/index.css';
 import '../assets/styles/start-screen.css'
+import '../assets/styles/messageView.css'
 
 import Chatbot  from './Chatbot';
 import ChatbotView  from './ChatbotView';
 import IconOpenChat from './IconOpenChat'
+import MessageView from './MessageView'
+import ListMessage from './ListMessage';
 // import { clearBlipSDK } from './helpers/clear-id-blip';
 
 
@@ -28,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var chatbot = new Chatbot();
     chatbot.toggleChat();
+
+    
+    var myChat = document.getElementById('myChat');
+    var messagesView = new MessageView(myChat);
+    messagesView.update();
+    messagesView.sendMessage();
 
 
 });

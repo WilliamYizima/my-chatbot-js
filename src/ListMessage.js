@@ -5,8 +5,8 @@ export default class ListMessage {
     }
 
     insertMessage(message){
-
         this._listMessage.push(message);
+        console.log('mensagem inserida com sucesso')
     }
 
     get listMessage() {
