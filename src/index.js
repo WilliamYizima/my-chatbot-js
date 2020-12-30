@@ -24,12 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var chatbotView = new ChatbotView(startScreenContent);
     chatbotView.update('oi');
 
-
-    
     // clearBlipSDK(MESSAGE_DEBUG);
 
     var chatbot = new Chatbot();
-    chatbot.openChat();
+    chatbot.toggleChat();
 
 
 });
