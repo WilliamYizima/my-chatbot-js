@@ -15,6 +15,7 @@ export default class IconOpenChat {
     iframeIbot.setAttribute('id','iframe-ibot');
 
     //Create Elements
+    // TODO - colocar os atributos
     var iconChatOpen = iconOpenChat.create( CONFIG_BOTTOM_IMAGE_URL, CONFIG_TOP_IMAGE_URL);    
     iframeIbot.appendChild(iconChatOpen);
     
