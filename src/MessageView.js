@@ -1,6 +1,7 @@
 import ListMessage from './ListMessage';
 import Message from './Message';
-
+import { clearBlipSDK } from './helpers/clear-id-blip'
+ 
 export default class MessageView{
     constructor(element){
         this._element = element;
@@ -19,6 +20,7 @@ export default class MessageView{
                 <input type="text" name="message" placeholder="Digite seu usuário">
                 <button type="submit">Enviar</button>
             </form>
+            
             `
     }
 
@@ -44,8 +46,35 @@ export default class MessageView{
                 this._listMessage.insertMessage(messageObj);
                 this._listMessage.listMessage;
                 this.update();
+
+                if(message==="blip"){
+                    document.querySelector('#chat').setAttribute('style','display:none');
+                    document.querySelector('#blip-container-ifc').setAttribute('style','display:inline');
+                    
+                    this.changeBlip();
+                }
             }
         }
+    }
+
+    changeBlip(){
+            clearBlipSDK();
+            
+                
+                  var chatbot = new BlipChat()
+                  .withAppKey('bW9kZWxvYXR1YWw6OGQzY2ZjODctNDk0My00MjMxLWJhZWEtOGViYjQ5YzNkYjlm')
+                  .withTarget("blip-container-ifc")
+                  .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+                      console.log('enviando')
+                      chatbot.sendMessage({
+                          "type": "text/plain",
+                          "content": "GAMA~|~form",
+                          metadata: {
+                              "#blip.hiddenMessage": true
+                          }
+                      });
+                  });
+                  chatbot.build();         
     }
     
 

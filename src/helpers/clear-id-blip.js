@@ -1,4 +1,4 @@
-export const clearBlipSDK =  (msgDebug ) => {
+export const clearBlipSDK =  (msgDebug="testando limpeza" ) => {
     console.log(msgDebug);
     let blipSDK = localStorage.getItem("blipSdkUAccount")
     console.log(`SDK:${blipSDK}`)
