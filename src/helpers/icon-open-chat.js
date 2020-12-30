@@ -46,23 +46,9 @@ export var iconOpenChat = (function () {
         return iconChatOpen;
     };
     //TODO - Implmeentar abertura do chat TOOGGLE
-    var openChat = () => {
-        let iconChatOpen = document.querySelector('#blip-chat-open-iframe');
-        iconChatOpen.onclick = () => {
-            var mainDiv = document.getElementById("start-screen"); //o menu principal
-            mainDiv.classList.add("fade-out"); //movo para esquerda(ele some) o menu principal
-
-            mainDiv.addEventListener("animationend", (ev) => {
-                        if (ev.type === "animationend") {
-                            mainDiv.style.display = "none";
-                        }
-                    }, false);
-        }
-    }
 
     return {
-        create: create,
-        openChat: openChat
+        create: create
     }
 })();
 
