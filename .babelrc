@@ -1,4 +1,6 @@
 {
-    "presets":["es2017"],
-    "plugins" : ["transform-decorators-legacy"]
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "syntax-dynamic-import"
+    ]
 }
