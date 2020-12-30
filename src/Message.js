@@ -1,6 +1,6 @@
 export default class Message{
 
-    constructor(message, from, type){
+    constructor(message, from='user', type='text'){
         this._message = message;
         this._from = from;
         this._type = type;

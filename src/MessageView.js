@@ -1,19 +1,19 @@
 import ListMessage from './ListMessage';
+import Message from './Message';
 
 export default class MessageView{
     constructor(element){
         this._element = element;
-        let $ = document.querySelector.bind(document);
         this._listMessage = new ListMessage();
     }
 
     createChat(){
         return `
-        Message<form id="chat">
-                <input type="text" name="username" placeholder="Digite seu usuário">
+        <form id="chat" onsubmit="messagesView.sendMessage()">
+                
                 <div class="messages">
                     ${this._listMessage.listMessage.map(n => `
-                    <div class="message"><strong> Naruto </strong>: ${n}</div>
+                    <div class="message"><strong> ${n.from} </strong>: ${n.message}</div>
                     `).join('')}
                 </div>
                 <input type="text" name="message" placeholder="Digite seu usuário">
@@ -24,12 +24,8 @@ export default class MessageView{
 
     update(){
         this._element.innerHTML = this.createChat();
+        this.sendMessage();
         
-    }
-
-    renderMessage(message){
-        document.querySelector('.messages')
-            .append('<div class="message"><strong>' + message.author + '</strong>:' + message.message+'</div>')
     }
 
     sendMessage(){
@@ -38,19 +34,15 @@ export default class MessageView{
         iconChatOpen.onclick = (event) => {
             event.preventDefault();
             
-            var author = document.querySelector('input[name=username]').value;
             var message = document.querySelector('input[name=message]').value;
             
     
-            if(author.length && message.length){
-                var messageObject = {
-                    author,
-                    message,
-                };
+            if(message.length){
+                // var messageObj = new Message(message,author,'text');
+                var messageObj = new Message(message);
             
-                this._listMessage.insertMessage(message);
+                this._listMessage.insertMessage(messageObj);
                 this._listMessage.listMessage;
-                console.log('inseri essa msg',message);
                 this.update();
             }
         }

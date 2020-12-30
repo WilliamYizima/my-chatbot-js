@@ -8,7 +8,6 @@ import Chatbot  from './Chatbot';
 import ChatbotView  from './ChatbotView';
 import IconOpenChat from './IconOpenChat'
 import MessageView from './MessageView'
-import ListMessage from './ListMessage';
 // import { clearBlipSDK } from './helpers/clear-id-blip';
 
 
