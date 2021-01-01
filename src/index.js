@@ -1,17 +1,6 @@
-// import '../assets/styles/icon-open-chat.css';
-// import '../assets/styles/bubble-greetings.css';
-// import '../assets/styles/index.css';
-// import '../assets/styles/start-screen.css'
-// import '../assets/styles/messageView.css'
-// import '../assets/styles/blip-container.css'
 
 import './sass/styles.scss'
 
-// import Chatbot  from './Chatbot';
-// import ChatbotView  from './ChatbotView';
-// import IconOpenChat from './IconOpenChat'
-// import MessageView from './MessageView'
-// import { clearBlipSDK } from './helpers/clear-id-blip';
 
 
 import { Chatbot } from './js/classes/Chatbot'
@@ -28,7 +17,7 @@ const styleConfig = {
     },
     chatbotIcon: {
         position: 'right-bottom',
-        background: '#e2e0e0'
+        background: '#000'
     },
     chatbotInputText: {
         color: '#040404',
