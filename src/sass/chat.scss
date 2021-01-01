@@ -39,8 +39,8 @@
     min-width: 400px;
     max-width: 400px;
 
-    height: 80%;
-    min-height: 420px;
+    height: calc(100% - 125px);
+    min-height: calc(30% - 0px);
     max-height: 680px;
 
     border-radius: 10px;

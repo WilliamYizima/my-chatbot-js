@@ -149,17 +149,21 @@ export class Chatbot {
     if(!btnOpenChat) {
       throw new Error(`Not found ${config.btnToOpenChat}`)
     }
-    btnOpenChat.addEventListener('click', () => this.openChat())
+    btnOpenChat.addEventListener('click', () => this.toggleChat())
   }
 
   addListenerToCloseChat() {
     const { configIds: config } = this
 
     const btnCloseChat = document.querySelector(`#${config.btnToCloseChat}`)
+    const btnOpenChat = document.querySelector(`#${config.btnToOpenChat}`)
+    
     if(!btnCloseChat) {
       throw new Error(`Not found ${config.btnToCloseChat}`)
     }
     btnCloseChat.addEventListener('click', () => this.closeChat())
+
+      
   }
 
   addListenerToInputText() {
