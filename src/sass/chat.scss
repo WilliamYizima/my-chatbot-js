@@ -1,3 +1,7 @@
+#blip-chat-open-iframe{
+  display: none !important;
+}
+
 .chatbot {
   $sizeInputText: -45px;
   $paddingContentMessage: 10px;
@@ -43,7 +47,7 @@
     min-height: calc(30% - 0px);
     max-height: 680px;
 
-    border-radius: 10px;
+    border-radius: 20px 20px 0px 0px;
 
     &[data-position="right-bottom"] {
       right: 25px;
@@ -54,25 +58,30 @@
       display: flex;
     }
 
+    &--header{
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: black;
+      border-radius: 20px 20px 0px 0px;
+      height: 50px;
+      color:#fff;
+
+      & span{
+        margin-left: 35%;
+      }
+    }
+
     &--close {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      border-radius: 5px;
-      border: none;
-
-      background: none;
-
-      font-size: 18px;
-      font-weight: bold;
-
-      opacity: .7;
-
-      transform: translate(-5px, 5px);
-
-      transition: opacity .2s ease;
-      cursor: pointer;
+      
+      & img{
+        cursor: pointer;
+        opacity: .7;
+        margin-right: 2%;
+        margin-top: 1%;
+        transition: opacity .2s ease;
+      }
 
       &:focus {
         outline: none;
@@ -128,6 +137,8 @@
       transform: translateY($sizeInputText - 10px);
     }
   }
+
+  
 
   .message-chat {
     display: flex;

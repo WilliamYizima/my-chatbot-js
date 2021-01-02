@@ -1,4 +1,5 @@
 import { SessionIdStorage } from './SessionIdStorage'
+import { BlipIFC } from './BlipIFC'
 import chatbotService from '../services/ChatbotService'
 
 import * as MessageChatUtil from '../utils/MessageChatUtil'
@@ -15,9 +16,13 @@ export class Chatbot {
     this.chatOpened = chatOpen
     this.styleConfig = styleConfig
     this.storageConfig = storageConfig
+    this.blipActivate = false;
+    this._widgetLocation = "https://unpkg.com/blip-chat-widget";
   }
 
   init() {
+
+    this.loadBlipExtension();
     this.container = document.querySelector(`#${this.id}`)
 
     if (!this.container) {
@@ -111,6 +116,14 @@ export class Chatbot {
       chatbotService
       .handleMessage(message)
       .then((response) => {
+        if(response.blipActivate){
+          this.blipActivate = true;
+          var blipChatbot = new BlipIFC('bW9kZWxvYXR1YWw6OGQzY2ZjODctNDk0My00MjMxLWJhZWEtOGViYjQ5YzNkYjlm',
+                                            'blip-container-ifc',
+                                            'GAMA~|~form')
+          blipChatbot.createBot();                                            
+          console.log('blip ativado')
+        }
         this.handleResponseBot(response)
         })
     } catch (err) {
@@ -164,6 +177,14 @@ export class Chatbot {
     btnCloseChat.addEventListener('click', () => this.closeChat())
 
       
+  }
+
+  // TODO alterar para a classe correta
+  loadBlipExtension(){
+    console.log('inserindo o script')
+    var script = document.createElement("script");
+    script.src = this._widgetLocation;
+    document.head.append(script);
   }
 
   addListenerToInputText() {

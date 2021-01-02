@@ -17,12 +17,17 @@ export const getContentHtml = (chatOpened, config, css) => {
           data-position="${css.chatbot.position}"
           style="background: ${css.chatbot.background}"
         >
-          <button 
-            id="${config.btnToCloseChat}"
-            class="chatbot__content--close"
-          >
-            X
-          </button>
+          <div class="chatbot__content--header">
+            <span>
+              BOT TITLE TEST
+            </span>
+            <div id="${config.btnToCloseChat}" 
+              class="chatbot__content--close">
+              <img 
+                src="http://localhost:8080/close-button-bot.png"
+                />
+            </div>
+          </div>
 
           <div
             id="${config.contentMessage}"
