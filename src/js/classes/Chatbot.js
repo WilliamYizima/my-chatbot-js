@@ -118,10 +118,10 @@ export class Chatbot {
       .then((response) => {
         if(response.blipActivate){
           this.blipActivate = true;
-          var blipChatbot = new BlipIFC('bW9kZWxvYXR1YWw6OGQzY2ZjODctNDk0My00MjMxLWJhZWEtOGViYjQ5YzNkYjlm',
+          this.blipChatbot = new BlipIFC('bW9kZWxvYXR1YWw6OGQzY2ZjODctNDk0My00MjMxLWJhZWEtOGViYjQ5YzNkYjlm',
                                             'blip-container-ifc',
                                             'GAMA~|~form')
-          blipChatbot.createBot();                                            
+          this.blipChatbot.createBot();                                            
           console.log('blip ativado')
         }
         this.handleResponseBot(response)
@@ -162,7 +162,13 @@ export class Chatbot {
     if(!btnOpenChat) {
       throw new Error(`Not found ${config.btnToOpenChat}`)
     }
-    btnOpenChat.addEventListener('click', () => this.toggleChat())
+    btnOpenChat.addEventListener('click', () => {
+      if(this.blipActivate) {
+        console.log('oi');
+        this.blipChatbot.toogleChat();
+      }
+      this.toggleChat()
+    })
   }
 
   addListenerToCloseChat() {

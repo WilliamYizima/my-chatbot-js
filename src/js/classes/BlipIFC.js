@@ -213,7 +213,7 @@ export class BlipIFC {
             `
         }
 
-        var chatbot = new BlipChat()
+        this.chatbot = new BlipChat()
         .withAppKey(this.appKey)
         .withTarget(this.target)
         .withCustomStyle(iframeStyle(PRIMARY_COLOR))
@@ -228,21 +228,12 @@ export class BlipIFC {
                 }
             });
         });
-        chatbot.build();
-        chatbot.toogleChat();
+        this.chatbot.build();
+        this.chatbot.toogleChat();
     }
 
-    loadBlipExtension(){
-        this.loadBlipExtension = function() {
-            return new Promise(function(resolve, reject) {
-                console.log('inserindo o script')
-                var script = document.createElement("script");
-                script.src = this._widgetLocation;
-                script.onload = resolve;
-                document.head.append(script);
-                console.log('inseri esse carlaho')
-            });
-        };
+    toogleChat(){
+        this.chatbot.toogleChat();
     }
 }
 
